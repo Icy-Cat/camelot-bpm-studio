@@ -1,365 +1,91 @@
 {
   "metadata": {
-    "title": "价格",
-    "description": "选择方案，立即开始"
+    "title": "价格与 Pro DJ 专业买断权益 | Camelot BPM Studio",
+    "description": "免费版完全免登录，直接拖拽。$14.99 终身买断 Pro 专业版，支持直接将 Camelot 调性写入 MP3 ID3 标签适配 Rekordbox & Serato。"
   },
   "page": {
-    "title": "ShipAny 价格表",
+    "title": "Camelot BPM Studio 价格方案",
     "sections": {
       "pricing": {
         "id": "pricing",
-        "title": "价格",
-        "description": "获取 ShipAny 的全部功能，极速交付你的 AI SaaS 创业项目。",
+        "title": "透明实惠的 DJ 软件定价",
+        "description": "基础版 100% 免费且完全免登录。一次买断 Pro 专业版，永久高效整理曲库。",
         "groups": [
           {
             "name": "one-time",
-            "title": "按次付费"
-          },
-          {
-            "name": "monthly",
-            "title": "包月",
-            "is_featured": true,
-            "label": "立省15%"
-          },
-          {
-            "name": "yearly",
-            "title": "包年"
+            "title": "终身买断",
+            "is_featured": true
           }
         ],
         "items": [
           {
-            "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
-            "features_title": "包含",
+            "title": "免费基础版",
+            "description": "即用即走端侧分析，满足日常试听、练歌与小体量混音需求。",
+            "features_title": "永久免费包含",
             "features": [
-              "100 积分，有效期 1 个月",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
+              "完全免登录免注册 (0 阻碍体验)",
+              "100% 浏览器本地运算 (音频零上传服务器)",
+              "每次支持最多 20 首批量拖拽",
+              "高精度 BPM 节拍侦测（精确到一位小数）",
+              "Camelot 轮盘调性记号 (8A, 8B, 11B 等)",
+              "一键半速 / 双倍速切换校正 (x2 / /2)",
+              "分析结果一键导出 CSV 表格"
             ],
             "interval": "one-time",
-            "amount": 9900,
+            "amount": 0,
             "currency": "USD",
-            "price": "$99",
-            "original_price": "$199",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 69900,
-                "price": "¥699",
-                "original_price": "¥1399",
-                "payment_providers": ["stripe"]
-              }
-            ],
-            "unit": "",
+            "price": "$0",
+            "original_price": "",
+            "unit": "永久免费",
             "is_featured": false,
-            "tip": "一次付费，畅享无限项目部署！",
+            "tip": "无需账号，拖入音频即刻分析！",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
+              "title": "在浏览器中免费使用",
+              "url": "/",
+              "icon": "Disc"
             },
-            "product_id": "starter",
-            "product_name": "ShipAny 模板入门版",
-            "credits": 100,
-            "valid_days": 30,
+            "product_id": "free_tier",
+            "product_name": "Free Tier",
+            "credits": 0,
+            "valid_days": 9999,
             "group": "one-time"
           },
           {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
+            "title": "Pro DJ 专业终身版",
+            "description": "专为驻场、电音节及专业商演 DJ 打造的全套曲库备歌工具。",
+            "label": "比 Mixed In Key ($58) 立省 $43",
+            "features_title": "包含免费版全部功能，外加高阶权益",
             "features": [
-              "200 积分，有效期 3 个月",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
+              "直接在浏览器内将调性写入 MP3 本地文件 ID3 标签",
+              "直接注入 TKEY (Camelot) 与 TBPM，Rekordbox & Serato 自动识别",
+              "无限制批量文件夹拖拽 (可同时分析整张专辑/整套曲库)",
+              "谐音混音出歌顺序智能推荐 (Harmonic Sequence)",
+              "端侧高优先级并行解码加速",
+              "一次性买断，绝无每月强制扣费订阅",
+              "通过谷歌账号登录快捷绑定权益",
+              "永久免费享有后续全部更新"
             ],
             "interval": "one-time",
-            "amount": 19900,
+            "amount": 1499,
             "currency": "USD",
-            "price": "$199",
-            "original_price": "$299",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 139900,
-                "price": "¥1399",
-                "original_price": "¥1999",
-                "payment_providers": ["stripe"]
-              }
-            ],
-            "unit": "",
+            "price": "$14.99",
+            "original_price": "$39.99",
+            "unit": "终身买断",
             "is_featured": true,
-            "tip": "一次付费，畅享无限项目部署！",
+            "tip": "一次购买，永久使用！",
             "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
+              "title": "解锁 Pro 终身权益 ($14.99)",
+              "url": "/api/payment/checkout?product_id=pro_lifetime",
+              "icon": "Sparkles"
             },
-            "product_id": "standard",
-            "product_name": "ShipAny 模板标准版",
-            "credits": 200,
-            "valid_days": 90,
+            "product_id": "pro_lifetime",
+            "product_name": "Camelot BPM Studio Pro Lifetime",
+            "credits": 999999,
+            "valid_days": 99999,
             "group": "one-time"
-          },
-          {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
-            "features": [
-              "300 积分，有效期 1 年",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
-            ],
-            "interval": "one-time",
-            "amount": 29900,
-            "currency": "USD",
-            "price": "$299",
-            "original_price": "$399",
-            "currencies": [
-              {
-                "currency": "CNY",
-                "amount": 199900,
-                "price": "¥1999",
-                "original_price": "¥2799",
-                "payment_providers": ["stripe", "creem"]
-              }
-            ],
-            "unit": "",
-            "is_featured": false,
-            "tip": "一次付费，畅享无限项目部署！",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium",
-            "product_name": "ShipAny 模板高级版",
-            "credits": 300,
-            "valid_days": 365,
-            "group": "one-time"
-          },
-          {
-            "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
-            "features_title": "包含",
-            "features": [
-              "100 积分，有效期 1 个月",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
-            ],
-            "interval": "month",
-            "amount": 8900,
-            "currency": "USD",
-            "price": "$89",
-            "original_price": "$99",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "按月付费，畅享无限项目部署！",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-monthly",
-            "product_name": "ShipAny 模板入门版包月",
-            "credits": 100,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "入门版"
-          },
-          {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
-            "features": [
-              "200 积分，有效期 1 个月",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
-            ],
-            "interval": "month",
-            "amount": 16900,
-            "currency": "USD",
-            "price": "$169",
-            "original_price": "$199",
-            "unit": "/ 月",
-            "is_featured": true,
-            "tip": "按月付费，极速上线你的 SaaS 项目。",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "standard-monthly",
-            "product_name": "ShipAny 模板标准版包月",
-            "credits": 200,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "标准版"
-          },
-          {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
-            "features": [
-              "300 积分，有效期 1 个月",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
-            ],
-            "interval": "month",
-            "amount": 24900,
-            "currency": "USD",
-            "price": "$249",
-            "original_price": "$299",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "按月付费，助你交付任何 AI SaaS 项目。",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium-monthly",
-            "product_name": "ShipAny 模板高级版包月",
-            "credits": 300,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "高级版"
-          },
-          {
-            "title": "入门版",
-            "description": "开启你的第一个 SaaS 创业项目。",
-            "features_title": "包含",
-            "features": [
-              "100 积分，有效期 1 年",
-              "NextJS 项目模板",
-              "SEO 友好结构",
-              "支持 Stripe 支付",
-              "Supabase 数据存储",
-              "Google Oauth & 一键登录",
-              "多语言（i18n）支持"
-            ],
-            "interval": "year",
-            "amount": 82800,
-            "currency": "USD",
-            "price": "$69",
-            "original_price": "$89",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "按年付费，畅享无限项目部署！",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-yearly",
-            "product_name": "ShipAny 模板入门版包年",
-            "credits": 1200,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "入门版"
-          },
-          {
-            "title": "标准版",
-            "description": "快速交付你的 SaaS 创业项目。",
-            "label": "热门",
-            "features_title": "包含入门版功能，此外",
-            "features": [
-              "200 积分，有效期 1 年",
-              "支持 Vercel 或 Cloudflare 部署",
-              "自动生成隐私政策&服务条款",
-              "集成 Google Analytics",
-              "集成 Google Search Console",
-              "Discord 技术社区",
-              "首个上线项目技术支持",
-              "终身免费更新"
-            ],
-            "interval": "year",
-            "amount": 154800,
-            "currency": "USD",
-            "price": "$129",
-            "original_price": "$169",
-            "unit": "/ 月",
-            "is_featured": true,
-            "tip": "按年付费，极速上线你的 SaaS 项目。",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "standard-yearly",
-            "product_name": "ShipAny 模板标准版包年",
-            "credits": 2400,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "标准版"
-          },
-          {
-            "title": "高级版",
-            "description": "交付任意 AI SaaS 创业项目。",
-            "features_title": "包含标准版功能，此外",
-            "features": [
-              "300 积分，有效期 1 年",
-              "内置 AI 业务功能",
-              "用户中心",
-              "积分系统",
-              "为你的 SaaS 售卖 API",
-              "后台管理系统",
-              "优先技术支持"
-            ],
-            "interval": "year",
-            "amount": 226800,
-            "currency": "USD",
-            "price": "$189",
-            "original_price": "$249",
-            "unit": "/ 月",
-            "is_featured": false,
-            "tip": "按年付费，助你交付任何 AI SaaS 项目。",
-            "button": {
-              "title": "获取 ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium-yearly",
-            "product_name": "ShipAny 模板高级版包年",
-            "credits": 3600,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "高级版"
           }
         ]
       }
     }
-  },
-  "messages": {
-    "current_plan": "当前方案",
-    "processing": "处理中"
   }
 }

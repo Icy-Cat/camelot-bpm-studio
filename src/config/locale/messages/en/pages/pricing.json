@@ -1,338 +1,91 @@
 {
   "metadata": {
-    "title": "Pricing",
-    "description": "Start with a plan"
+    "title": "Pricing & Pro DJ License | Camelot BPM Studio",
+    "description": "Free in-browser tier with zero login required. Upgrade to Pro for $14.99 lifetime to write ID3 tags for Rekordbox & Serato."
   },
   "page": {
-    "title": "ShipAny Pricing",
+    "title": "Camelot BPM Studio Pricing",
     "sections": {
       "pricing": {
         "id": "pricing",
-        "title": "Pricing",
-        "description": "Get all features of ShipAny, Ship your AI SaaS startups fast.",
+        "title": "Fair, Transparent Pricing for DJs",
+        "description": "Start 100% free with no login required. Unlock Pro once, prep crates forever.",
         "groups": [
           {
             "name": "one-time",
-            "title": "Pay as you go"
-          },
-          {
-            "name": "monthly",
-            "title": "Monthly",
-            "is_featured": true,
-            "label": "save 15%"
-          },
-          {
-            "name": "yearly",
-            "title": "Annually"
+            "title": "Lifetime Access",
+            "is_featured": true
           }
         ],
         "items": [
           {
-            "title": "Starter",
-            "description": "Get started with your first SaaS startup.",
-            "features_title": "Includes",
+            "title": "Free DJ Crate Prep",
+            "description": "Instant in-browser harmonic analysis for casual gigs and quick practice.",
+            "features_title": "Includes Free Forever",
             "features": [
-              "100 credits, valid for 1 month",
-              "NextJS boilerplate",
-              "SEO-friendly structure",
-              "Payment with Stripe",
-              "Data storage with Supabase",
-              "Google Oauth & One-Tap Login",
-              "i18n support"
+              "Zero login required (No sign-up)",
+              "100% client-side privacy (No server uploads)",
+              "Batch analyze up to 20 tracks at once",
+              "Decimal precision BPM detection",
+              "Camelot Wheel Key notation (8A, 8B, 11B)",
+              "Instant Half / Double tempo fix (x2 / /2)",
+              "Export analyzed crate to CSV spreadsheet"
             ],
             "interval": "one-time",
-            "amount": 9900,
+            "amount": 0,
             "currency": "USD",
-            "price": "$99",
-            "original_price": "$199",
-            "unit": "",
+            "price": "$0",
+            "original_price": "",
+            "unit": "forever",
             "is_featured": false,
-            "tip": "Pay once. Build unlimited projects!",
+            "tip": "No account needed. Just drag and drop!",
             "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
+              "title": "Use Free in Browser",
+              "url": "/",
+              "icon": "Disc"
             },
-            "product_id": "starter",
-            "product_name": "ShipAny Boilerplate Starter",
-            "credits": 100,
-            "valid_days": 30,
+            "product_id": "free_tier",
+            "product_name": "Free Tier",
+            "credits": 0,
+            "valid_days": 9999,
             "group": "one-time"
           },
           {
-            "title": "Standard",
-            "description": "Ship Fast with your SaaS Startups.",
-            "label": "Popular",
-            "features_title": "Everything in Starter, plus",
+            "title": "Pro DJ Lifetime",
+            "description": "Full crate prep power for club, festival, and mobile DJs.",
+            "label": "Save $43 vs Mixed In Key ($58)",
+            "features_title": "Everything in Free, plus Pro tools",
             "features": [
-              "200 credits, valid for 3 month",
-              "Deploy with Vercel or Cloudflare",
-              "Generation of Privacy & Terms",
-              "Google Analytics Integration",
-              "Google Search Console Integration",
-              "Discord community",
-              "Technical support for your first ship",
-              "Lifetime updates"
+              "Write ID3 Tags directly into MP3 files in-browser",
+              "Embed TKEY (Camelot) & TBPM for Rekordbox & Serato",
+              "Unlimited batch audio analysis (Drop full library folders)",
+              "Harmonic Mix Sequence Auto-Sorter",
+              "Priority audio decoding performance",
+              "One-time payment — No recurring monthly fees",
+              "Google OAuth single sign-on license binding",
+              "Lifetime updates and upcoming features"
             ],
             "interval": "one-time",
-            "amount": 19900,
+            "amount": 1499,
             "currency": "USD",
-            "price": "$199",
-            "original_price": "$299",
-            "unit": "",
+            "price": "$14.99",
+            "original_price": "$39.99",
+            "unit": "lifetime",
             "is_featured": true,
-            "tip": "Pay once. Build unlimited projects!",
+            "tip": "Pay once. Organize unlimited DJ sets!",
             "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
+              "title": "Unlock Pro Lifetime ($14.99)",
+              "url": "/api/payment/checkout?product_id=pro_lifetime",
+              "icon": "Sparkles"
             },
-            "product_id": "standard",
-            "product_name": "ShipAny Boilerplate Standard",
-            "credits": 200,
-            "valid_days": 90,
+            "product_id": "pro_lifetime",
+            "product_name": "Camelot BPM Studio Pro Lifetime",
+            "credits": 999999,
+            "valid_days": 99999,
             "group": "one-time"
-          },
-          {
-            "title": "Premium",
-            "description": "Ship Any AI SaaS Startups.",
-            "features_title": "Everything in Standard, plus",
-            "features": [
-              "300 credits, valid for 1 year",
-              "Business Functions with AI",
-              "User Center",
-              "Credits System",
-              "API Sales for your SaaS",
-              "Admin System",
-              "Priority Technical Support"
-            ],
-            "interval": "one-time",
-            "amount": 29900,
-            "currency": "USD",
-            "price": "$299",
-            "original_price": "$399",
-            "unit": "",
-            "is_featured": false,
-            "tip": "Pay once. Build unlimited projects!",
-            "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium",
-            "product_name": "ShipAny Boilerplate Premium",
-            "credits": 300,
-            "valid_days": 365,
-            "group": "one-time"
-          },
-          {
-            "title": "Starter",
-            "description": "Get started with your first SaaS startup.",
-            "features_title": "Includes",
-            "features": [
-              "100 credits, valid for 1 month",
-              "NextJS boilerplate",
-              "SEO-friendly structure",
-              "Payment with Stripe",
-              "Data storage with Supabase",
-              "Google Oauth & One-Tap Login",
-              "i18n support"
-            ],
-            "interval": "month",
-            "amount": 8900,
-            "currency": "USD",
-            "price": "$89",
-            "original_price": "$99",
-            "unit": "/ month",
-            "is_featured": false,
-            "tip": "Pay monthly. Build unlimited projects!",
-            "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-monthly",
-            "product_name": "ShipAny Boilerplate Starter Monthly",
-            "credits": 100,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "Starter"
-          },
-          {
-            "title": "Standard",
-            "description": "Ship Fast with your SaaS Startups.",
-            "label": "Popular",
-            "features_title": "Everything in Starter, plus",
-            "features": [
-              "200 credits, valid for 1 month",
-              "Deploy with Vercel or Cloudflare",
-              "Generation of Privacy & Terms",
-              "Google Analytics Integration",
-              "Google Search Console Integration",
-              "Discord community",
-              "Technical support for your first ship",
-              "Lifetime updates"
-            ],
-            "interval": "month",
-            "amount": 16900,
-            "currency": "USD",
-            "price": "$169",
-            "original_price": "$199",
-            "unit": "/ month",
-            "is_featured": true,
-            "tip": "Pay monthly. Ship Fast with your SaaS Startups.",
-            "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "standard-monthly",
-            "product_name": "ShipAny Boilerplate Standard Monthly",
-            "credits": 200,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "Standard"
-          },
-          {
-            "title": "Premium",
-            "description": "Ship Any AI SaaS Startups.",
-            "features_title": "Everything in Standard, plus",
-            "features": [
-              "300 credits, valid for 1 month",
-              "Business Functions with AI",
-              "User Center",
-              "Credits System",
-              "API Sales for your SaaS",
-              "Admin System",
-              "Priority Technical Support"
-            ],
-            "interval": "month",
-            "amount": 24900,
-            "currency": "USD",
-            "price": "$249",
-            "original_price": "$299",
-            "unit": "/ month",
-            "is_featured": false,
-            "tip": "Pay monthly. Ship Any AI SaaS Startups.",
-            "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium-monthly",
-            "product_name": "ShipAny Boilerplate Premium Monthly",
-            "credits": 300,
-            "valid_days": 30,
-            "group": "monthly",
-            "plan_name": "Premium"
-          },
-          {
-            "title": "Starter",
-            "description": "Get started with your first SaaS startup.",
-            "features_title": "Includes",
-            "features": [
-              "100 credits, valid for 1 year",
-              "NextJS boilerplate",
-              "SEO-friendly structure",
-              "Payment with Stripe",
-              "Data storage with Supabase",
-              "Google Oauth & One-Tap Login",
-              "i18n support"
-            ],
-            "interval": "year",
-            "amount": 82800,
-            "currency": "USD",
-            "price": "$69",
-            "original_price": "$89",
-            "unit": "/ month",
-            "is_featured": false,
-            "tip": "Pay annually. Build unlimited projects!",
-            "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "starter-yearly",
-            "product_name": "ShipAny Boilerplate Starter Annually",
-            "credits": 1200,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "Starter"
-          },
-          {
-            "title": "Standard",
-            "description": "Ship Fast with your SaaS Startups.",
-            "label": "Popular",
-            "features_title": "Everything in Starter, plus",
-            "features": [
-              "200 credits, valid for 1 year",
-              "Deploy with Vercel or Cloudflare",
-              "Generation of Privacy & Terms",
-              "Google Analytics Integration",
-              "Google Search Console Integration",
-              "Discord community",
-              "Technical support for your first ship",
-              "Lifetime updates"
-            ],
-            "interval": "year",
-            "amount": 154800,
-            "currency": "USD",
-            "price": "$129",
-            "original_price": "$169",
-            "unit": "/ month",
-            "is_featured": true,
-            "tip": "Pay annually. Ship Fast with your SaaS Startups.",
-            "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "standard-yearly",
-            "product_name": "ShipAny Boilerplate Standard Annually",
-            "credits": 2400,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "Standard"
-          },
-          {
-            "title": "Premium",
-            "description": "Ship Any AI SaaS Startups.",
-            "features_title": "Everything in Standard, plus",
-            "features": [
-              "300 credits, valid for 1 year",
-              "Business Functions with AI",
-              "User Center",
-              "Credits System",
-              "API Sales for your SaaS",
-              "Admin System",
-              "Priority Technical Support"
-            ],
-            "interval": "year",
-            "amount": 226800,
-            "currency": "USD",
-            "price": "$189",
-            "original_price": "$249",
-            "unit": "/ month",
-            "is_featured": false,
-            "tip": "Pay annually. Ship Any AI SaaS Startups.",
-            "button": {
-              "title": "Get ShipAny",
-              "url": "/#pricing",
-              "icon": "RiFlashlightFill"
-            },
-            "product_id": "premium-yearly",
-            "product_name": "ShipAny Boilerplate Premium Annually",
-            "credits": 3600,
-            "valid_days": 365,
-            "group": "yearly",
-            "plan_name": "Premium"
           }
         ]
       }
     }
-  },
-  "messages": {
-    "current_plan": "Current Plan",
-    "processing": "Processing"
   }
 }
