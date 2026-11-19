@@ -203,6 +203,11 @@ export function Pricing({
   };
 
   const handlePayment = async (item: PricingItem) => {
+    if (item.amount === 0 && item.button?.url) {
+      window.location.href = item.button.url;
+      return;
+    }
+
     if (!user) {
       setIsShowSignModal(true);
       return;

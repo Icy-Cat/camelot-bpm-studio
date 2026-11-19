@@ -23,15 +23,16 @@ export function CamelotWheelVisualizer() {
   const [selectedKey, setSelectedKey] = useState<KeyInfo>(CAMELOT_MAP['A Minor']); // Default 8A
 
   const isCompatible = (keyName: string) => {
+    const exact = `(${keyName})`;
     return (
       selectedKey.name === keyName ||
-      selectedKey.compatibleKeys.some((k) => k.includes(keyName)) ||
-      selectedKey.relativeKey.includes(keyName)
+      selectedKey.compatibleKeys.some((k) => k.includes(exact)) ||
+      selectedKey.relativeKey.includes(exact)
     );
   };
 
   const isEnergyBoost = (keyName: string) => {
-    return selectedKey.energyBoostKey.includes(keyName);
+    return selectedKey.energyBoostKey.includes(`(${keyName})`);
   };
 
   return (

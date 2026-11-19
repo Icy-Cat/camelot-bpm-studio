@@ -49,7 +49,7 @@ export function Header({ header }: { header: HeaderType }) {
                   <Link
                     href={item.url || ''}
                     target={item.target || '_self'}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs lg:text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
+                    className={`flex flex-row items-center gap-1.5 px-3 py-1.5 text-xs lg:text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
                       isActive
                         ? 'bg-slate-800/90 text-orange-400 font-semibold'
                         : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
