@@ -1,6 +1,7 @@
 {
   "name": "shipany-template-two",
   "version": "1.8.3",
+  "packageManager": "pnpm@11.7.0",
   "private": true,
   "author": "ShipAny.ai",
   "homepage": "https://shipany.ai",
@@ -165,11 +166,5 @@
     "tw-animate-css": "^1.3.5",
     "typescript": "^5",
     "wrangler": "^4.34.0"
-  },
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.2.2",
-      "@types/react-dom": "19.2.2"
-    }
   }
 }
