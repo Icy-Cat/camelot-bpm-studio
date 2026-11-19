@@ -38,16 +38,16 @@ export function FaqAccordion() {
   ];
 
   return (
-    <div id="faq" className="w-full bg-slate-900/40 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
+    <div id="faq" className="w-full bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs dark:shadow-none">
       <div className="space-y-1">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-orange-400">
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">
           <HelpCircle className="w-4 h-4" />
           <span>Frequently Asked Questions</span>
         </div>
-        <h3 className="text-xl font-bold text-white tracking-tight">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
           Everything You Need to Know About Camelot & BPM Analysis
         </h3>
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           Clear answers to common questions about harmonic mixing, browser security, and DJ crate prep.
         </p>
       </div>
@@ -57,12 +57,12 @@ export function FaqAccordion() {
           <AccordionItem
             key={idx}
             value={`item-${idx}`}
-            className="border border-slate-800/80 rounded-xl px-4 py-1 bg-slate-950/50 data-[state=open]:bg-slate-900/70 transition-colors"
+            className="border border-slate-200 dark:border-slate-800/80 rounded-xl px-4 py-1 bg-slate-50 dark:bg-slate-950/50 data-[state=open]:bg-white dark:data-[state=open]:bg-slate-900/70 transition-colors"
           >
-            <AccordionTrigger className="text-sm font-semibold text-slate-200 hover:text-white text-left hover:no-underline">
+            <AccordionTrigger className="text-sm font-semibold text-slate-800 hover:text-slate-950 dark:text-slate-200 dark:hover:text-white text-left hover:no-underline">
               {faq.q}
             </AccordionTrigger>
-            <AccordionContent className="text-xs text-slate-400 leading-relaxed pt-1 pb-3">
+            <AccordionContent className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed pt-1 pb-3">
               {faq.a}
             </AccordionContent>
           </AccordionItem>

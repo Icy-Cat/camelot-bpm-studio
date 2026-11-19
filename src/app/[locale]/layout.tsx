@@ -110,7 +110,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`dark ${notoSansMono.variable} ${merriweather.variable} ${jetbrainsMono.variable}`}
+      className={`${notoSansMono.variable} ${merriweather.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>

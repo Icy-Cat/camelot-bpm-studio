@@ -70,8 +70,13 @@ export function LocaleSelector({
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         {type === 'icon' ? (
-          <Button variant="ghost" size="icon" className="h-auto w-auto p-0">
-            <Languages size={18} />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-8 rounded-lg text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white"
+            aria-label="Switch language"
+          >
+            <Languages className="size-4" />
           </Button>
         ) : (
           <Button variant="outline" size="sm" className="hover:bg-primary/10">

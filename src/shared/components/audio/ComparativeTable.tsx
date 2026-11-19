@@ -71,16 +71,16 @@ export function ComparativeTable() {
   ];
 
   return (
-    <div className="w-full bg-slate-900/40 border border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6">
+    <div className="w-full bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 sm:p-8 space-y-6 shadow-xs dark:shadow-none">
       <div className="space-y-1">
-        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-orange-400">
+        <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-orange-600 dark:text-orange-400">
           <Zap className="w-4 h-4" />
           <span>Feature & Performance Comparison</span>
         </div>
-        <h3 className="text-xl font-bold text-white tracking-tight">
+        <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
           How Camelot BPM Studio Compares to Industry Standards
         </h3>
-        <p className="text-sm text-slate-400">
+        <p className="text-sm text-slate-600 dark:text-slate-400">
           Why professional DJs and music producers switch from bulky desktop installers and server-upload converters.
         </p>
       </div>
@@ -88,9 +88,9 @@ export function ComparativeTable() {
       <div className="overflow-x-auto">
         <table className="w-full text-left text-sm border-collapse min-w-[640px]">
           <thead>
-            <tr className="border-b border-slate-800 bg-slate-950/70 text-xs text-slate-400 uppercase tracking-wider">
+            <tr className="border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/70 text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">
               <th className="py-3 px-4 font-semibold">Evaluation Criteria</th>
-              <th className="py-3 px-4 font-bold text-orange-400 bg-orange-500/10 border-x border-orange-500/20">
+              <th className="py-3 px-4 font-bold text-orange-600 dark:text-orange-400 bg-orange-500/10 border-x border-orange-500/20">
                 Camelot BPM Studio
               </th>
               <th className="py-3 px-4 font-semibold">Mixed In Key</th>
@@ -98,34 +98,38 @@ export function ComparativeTable() {
               <th className="py-3 px-4 font-semibold">VocalRemover</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-slate-800 text-xs text-slate-300">
+          <tbody className="divide-y divide-slate-200 dark:divide-slate-800 text-xs text-slate-700 dark:text-slate-300">
             {comparisonData.map((row, idx) => (
               <tr
                 key={idx}
-                className={row.highlight ? 'bg-slate-900/40 hover:bg-slate-900/60' : 'hover:bg-slate-900/30'}
+                className={
+                  row.highlight
+                    ? 'bg-slate-50/70 hover:bg-slate-100/70 dark:bg-slate-900/40 dark:hover:bg-slate-900/60'
+                    : 'hover:bg-slate-50 dark:hover:bg-slate-900/30'
+                }
               >
-                <td className="py-3.5 px-4 font-medium text-slate-200">
+                <td className="py-3.5 px-4 font-medium text-slate-900 dark:text-slate-200">
                   {row.feature}
                 </td>
-                <td className="py-3.5 px-4 font-bold text-white bg-orange-500/5 border-x border-orange-500/20">
-                  <div className="flex items-center gap-1.5 text-orange-300">
-                    <Check className="w-4 h-4 text-orange-400 shrink-0" />
+                <td className="py-3.5 px-4 font-bold text-slate-900 dark:text-white bg-orange-500/5 border-x border-orange-500/20">
+                  <div className="flex items-center gap-1.5 text-orange-700 dark:text-orange-300">
+                    <Check className="w-4 h-4 text-orange-600 dark:text-orange-400 shrink-0" />
                     <span>{row.camelotBpm}</span>
                   </div>
                 </td>
-                <td className="py-3.5 px-4 text-slate-400">{row.mixedInKey}</td>
-                <td className="py-3.5 px-4 text-slate-400">{row.rekordbox}</td>
-                <td className="py-3.5 px-4 text-slate-400">{row.vocalRemover}</td>
+                <td className="py-3.5 px-4 text-slate-600 dark:text-slate-400">{row.mixedInKey}</td>
+                <td className="py-3.5 px-4 text-slate-600 dark:text-slate-400">{row.rekordbox}</td>
+                <td className="py-3.5 px-4 text-slate-600 dark:text-slate-400">{row.vocalRemover}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
 
-      <div className="text-xs text-slate-400 bg-slate-950/60 p-4 rounded-xl border border-slate-800/80 flex items-start gap-3">
-        <Shield className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+      <div className="text-xs text-slate-600 dark:text-slate-400 bg-slate-50 dark:bg-slate-950/60 p-4 rounded-xl border border-slate-200 dark:border-slate-800/80 flex items-start gap-3">
+        <Shield className="w-5 h-5 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
         <div>
-          <strong className="text-slate-200 block mb-0.5">Zero Server Upload Guarantee</strong>
+          <strong className="text-slate-900 dark:text-slate-200 block mb-0.5">Zero Server Upload Guarantee</strong>
           Unlike traditional online audio converters that transmit your files to cloud servers, 
           Camelot BPM Studio analyzes your music directly within your browser's Web Audio sandbox. 
           Your unreleased IDs, stems, and demos never leave your machine.

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 import { Link, usePathname } from '@/core/i18n/navigation';
@@ -12,19 +12,12 @@ import {
   ThemeToggler,
 } from '@/shared/blocks/common';
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '@/shared/components/ui/accordion';
-import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from '@/shared/components/ui/navigation-menu';
 import { useMedia } from '@/shared/hooks/use-media';
-import { NavItem } from '@/shared/types/blocks/common';
 import { Header as HeaderType } from '@/shared/types/blocks/landing';
 
 export function Header({ header }: { header: HeaderType }) {
@@ -41,7 +34,8 @@ export function Header({ header }: { header: HeaderType }) {
             const isActive =
               item.is_active ||
               (item.url !== '/' && pathname.includes(item.url as string)) ||
-              (item.url === '/' && (pathname === '/' || pathname === '/en' || pathname === '/zh'));
+              (item.url === '/' &&
+                (pathname === '/' || pathname === '/en' || pathname === '/zh'));
 
             return (
               <NavigationMenuItem key={idx}>
@@ -51,14 +45,18 @@ export function Header({ header }: { header: HeaderType }) {
                     target={item.target || '_self'}
                     className={`flex flex-row items-center gap-1.5 px-3 py-1.5 text-xs lg:text-sm font-medium rounded-lg transition-colors whitespace-nowrap ${
                       isActive
-                        ? 'bg-slate-800/90 text-orange-400 font-semibold'
-                        : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                        ? 'bg-orange-50 text-orange-600 dark:bg-slate-800/90 dark:text-orange-400 font-semibold'
+                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-800/60'
                     }`}
                   >
                     {item.icon && (
                       <SmartIcon
                         name={item.icon as string}
-                        className={`size-3.5 ${isActive ? 'text-orange-400' : 'text-slate-400'}`}
+                        className={`size-3.5 ${
+                          isActive
+                            ? 'text-orange-600 dark:text-orange-400'
+                            : 'text-slate-500 dark:text-slate-400'
+                        }`}
                       />
                     )}
                     <span>{item.title}</span>
@@ -89,14 +87,18 @@ export function Header({ header }: { header: HeaderType }) {
                 onClick={closeMenu}
                 className={`flex items-center gap-2.5 px-4 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   isActive
-                    ? 'bg-slate-800 text-orange-400 font-semibold'
-                    : 'text-slate-300 hover:text-white hover:bg-slate-900'
+                    ? 'bg-orange-50 text-orange-600 dark:bg-slate-800 dark:text-orange-400 font-semibold'
+                    : 'text-slate-700 hover:text-slate-950 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white dark:hover:bg-slate-900'
                 }`}
               >
                 {item.icon && (
                   <SmartIcon
                     name={item.icon as string}
-                    className={`size-4 ${isActive ? 'text-orange-400' : 'text-slate-400'}`}
+                    className={`size-4 ${
+                      isActive
+                        ? 'text-orange-600 dark:text-orange-400'
+                        : 'text-slate-500 dark:text-slate-400'
+                    }`}
                   />
                 )}
                 <span>{item.title}</span>
@@ -106,21 +108,19 @@ export function Header({ header }: { header: HeaderType }) {
         </div>
 
         {/* Mobile quick actions */}
-        <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between px-2">
+        <div className="pt-3 border-t border-slate-200 dark:border-slate-800/80 flex items-center justify-between px-2">
           <div className="flex items-center gap-2">
             {header.show_theme ? <ThemeToggler /> : null}
             {header.show_locale ? <LocaleSelector /> : null}
           </div>
-          {header.show_sign ? (
-            <SignUser userNav={header.user_nav} />
-          ) : null}
+          {header.show_sign ? <SignUser userNav={header.user_nav} /> : null}
         </div>
       </div>
     );
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-slate-950/85 border-b border-slate-800/80 transition-all duration-200">
+    <header className="fixed inset-x-0 top-0 z-50 backdrop-blur-md bg-white/85 dark:bg-slate-950/85 border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-200">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Left: Brand Logo */}
@@ -142,15 +142,13 @@ export function Header({ header }: { header: HeaderType }) {
               {header.show_locale ? <LocaleSelector /> : null}
             </div>
 
-            {header.show_sign ? (
-              <SignUser userNav={header.user_nav} />
-            ) : null}
+            {header.show_sign ? <SignUser userNav={header.user_nav} /> : null}
 
             {/* Hamburger menu button for mobile navigation */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label={isMobileMenuOpen ? 'Close Menu' : 'Open Menu'}
-              className="p-2 text-slate-300 hover:text-white lg:hidden rounded-lg hover:bg-slate-900"
+              className="p-2 text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-white lg:hidden rounded-lg dark:hover:bg-slate-900"
             >
               {isMobileMenuOpen ? (
                 <X className="size-5" />
@@ -163,7 +161,7 @@ export function Header({ header }: { header: HeaderType }) {
 
         {/* Mobile Menu Dropdown */}
         {!isLarge && isMobileMenuOpen && (
-          <div className="lg:hidden border-t border-slate-800/80 bg-slate-950/95 backdrop-blur-lg">
+          <div className="lg:hidden border-t border-slate-200 dark:border-slate-800/80 bg-white/95 dark:bg-slate-950/95 backdrop-blur-lg">
             <MobileMenu closeMenu={() => setIsMobileMenuOpen(false)} />
           </div>
         )}

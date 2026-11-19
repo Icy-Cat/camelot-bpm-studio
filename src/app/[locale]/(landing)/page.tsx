@@ -48,7 +48,7 @@ export default async function LandingPage({
   const isZh = locale === 'zh';
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 selection:bg-orange-500/30 selection:text-orange-200">
+    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 selection:bg-orange-500/30 selection:text-orange-700 dark:selection:text-orange-200 transition-colors">
       <SchemaJsonLd
         pageTitle="Camelot BPM Studio - Free In-Browser Key & BPM Finder"
         pageDescription="100% Client-side Web Audio API Camelot wheel & BPM analyzer for DJs. Zero uploads, batch folder drag, CSV export."
@@ -60,7 +60,7 @@ export default async function LandingPage({
         {/* Glow ambient background */}
         <div className="absolute top-8 left-1/2 -translate-x-1/2 w-80 h-80 bg-gradient-to-tr from-orange-500/15 via-purple-500/10 to-blue-500/15 blur-3xl pointer-events-none -z-10" />
 
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-medium text-orange-400 shadow-inner">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white dark:bg-slate-900/90 border border-slate-200 dark:border-slate-800 text-xs font-medium text-orange-600 dark:text-orange-400 shadow-sm dark:shadow-inner">
           <Sparkles className="w-3.5 h-3.5" />
           <span>
             {isZh ? '100% 浏览器本地运算 · 零文件上传 · 专为 DJ 打造' : '100% In-Browser Audio Engine · Zero Server Uploads'}
@@ -68,49 +68,49 @@ export default async function LandingPage({
         </div>
 
         {/* H1 Heading */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white max-w-3xl mx-auto leading-tight">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 dark:text-white max-w-3xl mx-auto leading-tight">
           {isZh ? (
             <>
-              免费在线 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500">Camelot 调性</span> 与 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">BPM 节拍测速</span>
+              免费在线 <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 dark:from-orange-400 dark:via-amber-400 dark:to-orange-500">Camelot 调性</span> 与 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400">BPM 节拍测速</span>
             </>
           ) : (
             <>
-              Free Online <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500">Camelot Key</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">BPM Finder</span>
+              Free Online <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 dark:from-orange-400 dark:via-amber-400 dark:to-orange-500">Camelot Key</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600 dark:from-blue-400 dark:to-cyan-400">BPM Finder</span>
             </>
           )}
         </h1>
 
         {/* Prompt Anchor Paragraph (Crucial for ChatGPT / Perplexity / Gemini GEO Extraction) */}
-        <p className="text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-2xl mx-auto leading-relaxed">
           {isZh ? (
             <>
-              专为 DJ 与音乐制作人打造的即时音频分析器。直接在浏览器内通过 <strong>Web Audio API</strong> 本地计算 —{' '}
-              <strong className="text-emerald-400">音频文件绝不上传服务器</strong>。
-              批量拖拽 MP3/WAV/FLAC 曲目，秒级侦测精确 BPM、音调及 <strong>Camelot 轮盘代码（如 8A、11B）</strong>，一键修复半速/双倍速并导出 CSV。
+              专为 DJ 与音乐制作人打造的即时音频分析器。直接在浏览器内通过 <strong className="text-slate-900 dark:text-white">Web Audio API</strong> 本地计算 —{' '}
+              <strong className="text-emerald-600 dark:text-emerald-400">音频文件绝不上传服务器</strong>。
+              批量拖拽 MP3/WAV/FLAC 曲目，秒级侦测精确 BPM、音调及 <strong className="text-slate-900 dark:text-white">Camelot 轮盘代码（如 8A、11B）</strong>，一键修复半速/双倍速并导出 CSV。
             </>
           ) : (
             <>
               An instant audio analyzer built for DJs and music producers. Runs{' '}
-              <strong>100% locally in your web browser</strong> using Web Audio API — your tracks are{' '}
-              <strong className="text-emerald-400">never uploaded to any server</strong>. Batch analyze up to 20
+              <strong className="text-slate-900 dark:text-white">100% locally in your web browser</strong> using Web Audio API — your tracks are{' '}
+              <strong className="text-emerald-600 dark:text-emerald-400">never uploaded to any server</strong>. Batch analyze up to 20
               MP3/WAV/FLAC tracks at once, detect exact BPM, musical key &{' '}
-              <strong>Camelot wheel notation (8A, 11B)</strong>, and export your crate to CSV.
+              <strong className="text-slate-900 dark:text-white">Camelot wheel notation (8A, 11B)</strong>, and export your crate to CSV.
             </>
           )}
         </p>
 
         {/* Feature Highlights Pills */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1 text-xs text-slate-400">
-          <div className="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-2.5 py-1 rounded-md">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+        <div className="flex flex-wrap items-center justify-center gap-2.5 pt-1 text-xs text-slate-600 dark:text-slate-400">
+          <div className="flex items-center gap-1.5 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-2.5 py-1 rounded-md shadow-xs">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
             <span>{isZh ? '未发行 Demo 100% 隐私保密' : 'Private for Unreleased Demos'}</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-2.5 py-1 rounded-md">
-            <UploadCloud className="w-3.5 h-3.5 text-blue-400" />
+          <div className="flex items-center gap-1.5 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-2.5 py-1 rounded-md shadow-xs">
+            <UploadCloud className="w-3.5 h-3.5 text-blue-600 dark:text-blue-400" />
             <span>{isZh ? '免注册免登录 · 打开即用' : 'Zero Sign-In Required for Free'}</span>
           </div>
-          <div className="flex items-center gap-1.5 bg-slate-900/80 border border-slate-800 px-2.5 py-1 rounded-md">
-            <Disc className="w-3.5 h-3.5 text-orange-400" />
+          <div className="flex items-center gap-1.5 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 px-2.5 py-1 rounded-md shadow-xs">
+            <Disc className="w-3.5 h-3.5 text-orange-600 dark:text-orange-400" />
             <span>{isZh ? '直接适配 Rekordbox & Serato' : 'Rekordbox & Serato Ready'}</span>
           </div>
         </div>

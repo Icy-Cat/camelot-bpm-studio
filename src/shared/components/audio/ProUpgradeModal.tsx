@@ -52,55 +52,55 @@ export function ProUpgradeModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-lg bg-slate-950 border-slate-800 text-slate-100 p-6 sm:p-8">
+      <DialogContent className="max-w-lg bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-900 dark:text-slate-100 p-6 sm:p-8">
         <DialogHeader className="text-left space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 text-amber-400 text-xs font-semibold w-fit">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-semibold w-fit">
             <Sparkles className="w-3.5 h-3.5" />
             <span>PRO DJ UNLOCK</span>
           </div>
 
-          <DialogTitle className="text-2xl font-bold tracking-tight text-white">
+          <DialogTitle className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white">
             Unlock Pro Features
           </DialogTitle>
-          <DialogDescription className="text-slate-400 text-sm">
-            You tried to access <strong className="text-white">{triggerFeature}</strong>. 
+          <DialogDescription className="text-slate-600 dark:text-slate-400 text-sm">
+            You tried to access <strong className="text-slate-900 dark:text-white">{triggerFeature}</strong>. 
             Upgrade to Pro to streamline your DJ library preparation.
           </DialogDescription>
         </DialogHeader>
 
         {/* Pro Feature Highlights */}
-        <div className="space-y-3 my-4 bg-slate-900/60 rounded-xl p-4 border border-slate-800">
+        <div className="space-y-3 my-4 bg-slate-50 dark:bg-slate-900/60 rounded-xl p-4 border border-slate-200 dark:border-slate-800">
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-orange-500/10 text-orange-400 mt-0.5">
+            <div className="p-2 rounded-lg bg-orange-500/10 text-orange-600 dark:text-orange-400 mt-0.5">
               <Tag className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-white">Write ID3 Tags In-Browser</h4>
-              <p className="text-xs text-slate-400">
+              <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Write ID3 Tags In-Browser</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-400">
                 Embed Camelot keys (TKEY) and BPM (TBPM) directly into MP3s for instant auto-loading in Rekordbox, Serato & Traktor.
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400 mt-0.5">
+            <div className="p-2 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 mt-0.5">
               <FolderSync className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-white">Unlimited Batch Folder Analysis</h4>
-              <p className="text-xs text-slate-400">
+              <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Unlimited Batch Folder Analysis</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-400">
                 Bypass the 20-track free batch cap. Drop entire playlist folders with zero file limits.
               </p>
             </div>
           </div>
 
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-purple-500/10 text-purple-400 mt-0.5">
+            <div className="p-2 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 mt-0.5">
               <Disc className="w-4 h-4" />
             </div>
             <div>
-              <h4 className="text-sm font-semibold text-white">Harmonic Mix Order Optimizer</h4>
-              <p className="text-xs text-slate-400">
+              <h4 className="text-sm font-semibold text-slate-900 dark:text-white">Harmonic Mix Order Optimizer</h4>
+              <p className="text-xs text-slate-600 dark:text-slate-400">
                 1-click reorder your crate by compatible Camelot harmonic sequence for smooth energy transitions.
               </p>
             </div>
@@ -108,13 +108,13 @@ export function ProUpgradeModal({
         </div>
 
         {/* Pricing & CTA */}
-        <div className="mt-2 pt-2 border-t border-slate-800/80">
+        <div className="mt-2 pt-2 border-t border-slate-200 dark:border-slate-800/80">
           <div className="flex items-baseline justify-between mb-4">
             <div>
-              <span className="text-2xl font-black text-white">$14.99</span>
-              <span className="text-slate-400 text-xs ml-1.5 font-medium">One-time Lifetime Access</span>
+              <span className="text-2xl font-black text-slate-900 dark:text-white">$14.99</span>
+              <span className="text-slate-500 dark:text-slate-400 text-xs ml-1.5 font-medium">One-time Lifetime Access</span>
             </div>
-            <span className="text-xs text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
+            <span className="text-xs text-emerald-700 dark:text-emerald-400 font-semibold bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded">
               Save $43 vs Mixed In Key ($58)
             </span>
           </div>
@@ -124,9 +124,9 @@ export function ProUpgradeModal({
               <Button
                 onClick={handleGoogleSignIn}
                 disabled={googleLoading}
-                className="w-full bg-white hover:bg-slate-100 text-slate-900 font-semibold py-5 text-sm gap-2"
+                className="w-full bg-slate-900 hover:bg-slate-800 text-white dark:bg-white dark:hover:bg-slate-100 dark:text-slate-900 font-semibold py-5 text-sm gap-2"
               >
-                <RiGoogleFill className="w-4 h-4 text-slate-900" />
+                <RiGoogleFill className="w-4 h-4" />
                 {googleLoading ? 'Connecting to Google...' : 'Continue with Google to Unlock'}
               </Button>
               <p className="text-[11px] text-center text-slate-500">
@@ -142,8 +142,8 @@ export function ProUpgradeModal({
                 <Zap className="w-4 h-4 fill-white" />
                 Unlock Pro License ($14.99)
               </Button>
-              <p className="text-[11px] text-center text-slate-400">
-                Signed in as <span className="text-white font-medium">{session.user?.email}</span>
+              <p className="text-[11px] text-center text-slate-500 dark:text-slate-400">
+                Signed in as <span className="text-slate-900 dark:text-white font-medium">{session.user?.email}</span>
               </p>
             </div>
           )}

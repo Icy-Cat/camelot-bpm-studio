@@ -45,11 +45,16 @@ interface AudioDropZoneProps {
 }
 
 const TRANSITION_STYLES: Record<HarmonicTransition['quality'], string> = {
-  perfect: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
-  smooth: 'bg-cyan-500/15 text-cyan-300 border-cyan-500/30',
-  boost: 'bg-amber-500/15 text-amber-300 border-amber-500/30',
-  moderate: 'bg-purple-500/15 text-purple-300 border-purple-500/30',
-  clash: 'bg-slate-800 text-slate-400 border-slate-700',
+  perfect:
+    'bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border-emerald-500/30',
+  smooth:
+    'bg-cyan-500/15 text-cyan-700 dark:text-cyan-300 border-cyan-500/30',
+  boost:
+    'bg-amber-500/15 text-amber-700 dark:text-amber-300 border-amber-500/30',
+  moderate:
+    'bg-purple-500/15 text-purple-700 dark:text-purple-300 border-purple-500/30',
+  clash:
+    'bg-slate-200 text-slate-600 dark:bg-slate-800 dark:text-slate-400 border-slate-300 dark:border-slate-700',
 };
 
 export function AudioDropZone({
@@ -349,7 +354,7 @@ export function AudioDropZone({
         className={`relative group cursor-pointer border-2 border-dashed rounded-2xl p-8 sm:p-12 text-center transition-all duration-200 overflow-hidden ${
           isDragging
             ? 'border-orange-500 bg-orange-500/10 scale-[1.01]'
-            : 'border-slate-800 bg-slate-900/60 hover:border-slate-700 hover:bg-slate-900/90'
+            : 'border-slate-300 bg-white hover:border-slate-400 hover:bg-slate-50/80 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-slate-700 dark:hover:bg-slate-900/90 shadow-xs dark:shadow-none'
         }`}
       >
         <input
@@ -368,27 +373,27 @@ export function AudioDropZone({
         <div className="absolute inset-0 bg-gradient-to-b from-orange-500/5 via-transparent to-transparent pointer-events-none" />
 
         <div className="relative z-10 flex flex-col items-center justify-center space-y-4">
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-orange-500/20 to-amber-500/20 border border-orange-500/30 flex items-center justify-center text-orange-400 group-hover:scale-110 transition-transform duration-200 shadow-lg shadow-orange-500/10">
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-orange-500/15 to-amber-500/15 dark:from-orange-500/20 dark:to-amber-500/20 border border-orange-500/30 flex items-center justify-center text-orange-500 dark:text-orange-400 group-hover:scale-110 transition-transform duration-200 shadow-lg shadow-orange-500/10">
             {isProcessing ? (
-              <Loader2 className="w-8 h-8 animate-spin text-orange-400" />
+              <Loader2 className="w-8 h-8 animate-spin text-orange-500 dark:text-orange-400" />
             ) : (
               <UploadCloud className="w-8 h-8" />
             )}
           </div>
 
           <div className="space-y-1.5 max-w-md">
-            <h3 className="text-xl font-bold text-white tracking-tight">
+            <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
               {isDragging
                 ? 'Drop Your Audio Files Here'
                 : 'Drop MP3, WAV, or FLAC Files Here'}
             </h3>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-slate-600 dark:text-slate-400">
               Drag & drop entire crates or click to browse. Runs{' '}
-              <strong className="text-slate-200">
+              <strong className="text-slate-900 dark:text-slate-200">
                 100% locally in your browser
               </strong>{' '}
               — files are{' '}
-              <strong className="text-emerald-400">
+              <strong className="text-emerald-600 dark:text-emerald-400">
                 never uploaded to any server
               </strong>
               .
@@ -398,25 +403,25 @@ export function AudioDropZone({
           <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
             <Badge
               variant="outline"
-              className="bg-slate-950/60 border-slate-800 text-slate-300 text-xs"
+              className="bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs"
             >
               ⚡ Instant Key & BPM
             </Badge>
             <Badge
               variant="outline"
-              className="bg-slate-950/60 border-slate-800 text-slate-300 text-xs"
+              className="bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs"
             >
               🎯 Camelot 8A / 8B Wheels
             </Badge>
             <Badge
               variant="outline"
-              className="bg-slate-950/60 border-slate-800 text-slate-300 text-xs"
+              className="bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs"
             >
               🔒 100% Client-Side Privacy
             </Badge>
             <Badge
               variant="outline"
-              className="bg-slate-950/60 border-slate-800 text-slate-300 text-xs"
+              className="bg-slate-50 dark:bg-slate-950/60 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 text-xs"
             >
               📁 Batch Folder Drop
             </Badge>
@@ -433,11 +438,11 @@ export function AudioDropZone({
         {/* Processing Progress Bar */}
         {isProcessing && (
           <div className="mt-6 max-w-md mx-auto space-y-2">
-            <div className="flex justify-between text-xs text-slate-400">
+            <div className="flex justify-between text-xs text-slate-500 dark:text-slate-400">
               <span className="truncate max-w-[250px]">{currentFileName}</span>
               <span>{currentProgress}%</span>
             </div>
-            <Progress value={currentProgress} className="h-1.5 bg-slate-800" />
+            <Progress value={currentProgress} className="h-1.5 bg-slate-200 dark:bg-slate-800" />
           </div>
         )}
       </div>
@@ -446,20 +451,20 @@ export function AudioDropZone({
       {tracks.length > 0 && (
         <div className="mt-8 space-y-4">
           {/* Action Header */}
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 bg-slate-900/80 border border-slate-800 p-4 rounded-xl">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 bg-white dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 p-4 rounded-xl shadow-xs dark:shadow-none">
             <div className="flex items-center gap-2 whitespace-nowrap">
-              <Disc className="w-5 h-5 text-orange-400 shrink-0" />
-              <span className="font-bold text-white text-sm sm:text-base">
+              <Disc className="w-5 h-5 text-orange-500 dark:text-orange-400 shrink-0" />
+              <span className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                 Analyzed Crate ({tracks.length} track
                 {tracks.length > 1 ? 's' : ''})
               </span>
               {isPro ? (
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
+                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300 bg-emerald-500/10 border border-emerald-500/30 px-2 py-0.5 rounded-full">
                   <Crown className="w-3 h-3" />
                   PRO UNLIMITED
                 </span>
               ) : (
-                <span className="text-xs text-slate-400">
+                <span className="text-xs text-slate-500 dark:text-slate-400">
                   (Free: {tracks.length}/{maxFreeTracks})
                 </span>
               )}
@@ -471,7 +476,7 @@ export function AudioDropZone({
                 size="sm"
                 variant="outline"
                 onClick={handleExportCsv}
-                className="bg-slate-950 border-slate-800 text-slate-200 hover:text-white hover:bg-slate-800 text-xs gap-1.5"
+                className="bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 text-xs gap-1.5"
               >
                 <Download className="w-3.5 h-3.5" />
                 Export CSV
@@ -503,14 +508,14 @@ export function AudioDropZone({
                 variant="outline"
                 onClick={handleHarmonicSort}
                 disabled={tracks.length < 2}
-                className="bg-slate-950 border-slate-800 text-slate-300 hover:text-white text-xs gap-1.5"
+                className="bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white text-xs gap-1.5"
               >
                 <ArrowUpDown className="w-3.5 h-3.5" />
                 Harmonic Sort
                 {!isPro ? (
-                  <Lock className="w-3 h-3 text-amber-400 ml-0.5" />
+                  <Lock className="w-3 h-3 text-amber-500 dark:text-amber-400 ml-0.5" />
                 ) : (
-                  <Sparkles className="w-3 h-3 text-emerald-400 ml-0.5" />
+                  <Sparkles className="w-3 h-3 text-emerald-600 dark:text-emerald-400 ml-0.5" />
                 )}
               </Button>
 
@@ -520,7 +525,7 @@ export function AudioDropZone({
                 variant="ghost"
                 onClick={clearAll}
                 title="Clear all tracks"
-                className="text-slate-400 hover:text-red-400 hover:bg-red-500/10 text-xs px-2"
+                className="text-slate-500 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-500/10 text-xs px-2"
               >
                 <Trash2 className="w-3.5 h-3.5" />
               </Button>
@@ -528,10 +533,10 @@ export function AudioDropZone({
           </div>
 
           {/* Results Table */}
-          <div className="border border-slate-800 rounded-xl overflow-x-auto bg-slate-950/70">
-            <table className="w-full text-left text-sm text-slate-300 border-collapse">
+          <div className="border border-slate-200 dark:border-slate-800 rounded-xl overflow-x-auto bg-white dark:bg-slate-950/70 shadow-xs dark:shadow-none">
+            <table className="w-full text-left text-sm text-slate-700 dark:text-slate-300 border-collapse">
               <thead>
-                <tr className="border-b border-slate-800/80 bg-slate-900/40 text-xs text-slate-400 uppercase tracking-wider">
+                <tr className="border-b border-slate-200 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-900/40 text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                   <th className="py-3 px-4 font-semibold">Track Name</th>
                   <th className="py-3 px-4 font-semibold">Camelot</th>
                   <th className="py-3 px-4 font-semibold">Key</th>
@@ -545,16 +550,16 @@ export function AudioDropZone({
                   <th className="py-3 px-2 font-semibold text-right w-16"></th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-800/60 font-mono text-xs">
+              <tbody className="divide-y divide-slate-200 dark:divide-slate-800/60 font-mono text-xs">
                 {tracks.map((track) => {
                   const transition = transitions[track.id];
                   return (
                     <tr
                       key={track.id}
-                      className="hover:bg-slate-900/50 transition-colors"
+                      className="hover:bg-slate-50 dark:hover:bg-slate-900/50 transition-colors"
                     >
                       {/* Filename */}
-                      <td className="py-3 px-4 font-sans font-medium text-slate-200 max-w-[240px]">
+                      <td className="py-3 px-4 font-sans font-medium text-slate-900 dark:text-slate-200 max-w-[240px]">
                         <div className="flex items-center gap-2">
                           <FileAudio className="w-4 h-4 text-slate-400 shrink-0" />
                           <span className="truncate" title={track.name}>
@@ -581,17 +586,17 @@ export function AudioDropZone({
                       </td>
 
                       {/* Key Name */}
-                      <td className="py-3 px-4 font-medium text-slate-300">
+                      <td className="py-3 px-4 font-medium text-slate-700 dark:text-slate-300">
                         {track.key}
                       </td>
 
                       {/* BPM & Half/Double Buttons */}
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-2">
-                          <span className="font-bold text-white text-sm">
+                          <span className="font-bold text-slate-900 dark:text-white text-sm">
                             {track.bpm.toFixed(1)}
                           </span>
-                          <div className="inline-flex rounded-md bg-slate-900 border border-slate-800 p-0.5">
+                          <div className="inline-flex rounded-md bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-0.5">
                             <button
                               title="Halve BPM (e.g. 140 -> 70 for Trap/Dubstep)"
                               onClick={() =>
@@ -600,7 +605,7 @@ export function AudioDropZone({
                               className={`px-1.5 py-0.5 text-[10px] rounded transition-colors ${
                                 track.bpmMultiplier === 0.5
                                   ? 'bg-orange-500 text-white font-bold'
-                                  : 'text-slate-400 hover:text-white'
+                                  : 'text-slate-600 hover:text-slate-950 dark:text-slate-400 dark:hover:text-white'
                               }`}
                             >
                               ÷2
@@ -611,7 +616,7 @@ export function AudioDropZone({
                               className={`px-1.5 py-0.5 text-[10px] rounded transition-colors ${
                                 track.bpmMultiplier === 2
                                   ? 'bg-orange-500 text-white font-bold'
-                                  : 'text-slate-400 hover:text-white'
+                                  : 'text-slate-600 hover:text-slate-950 dark:text-slate-400 dark:hover:text-white'
                               }`}
                             >
                               ×2
@@ -621,7 +626,7 @@ export function AudioDropZone({
                       </td>
 
                       {/* Compatible Keys */}
-                      <td className="py-3 px-4 text-slate-400">
+                      <td className="py-3 px-4 text-slate-500 dark:text-slate-400">
                         <span
                           className="truncate max-w-[200px] inline-block"
                           title={track.keyInfo.compatibleKeys.join(', ')}
@@ -631,14 +636,14 @@ export function AudioDropZone({
                             .map((k) => k.split(' ')[0])
                             .join(', ')}
                           {' · '}
-                          <span className="text-orange-400 font-semibold">
+                          <span className="text-orange-600 dark:text-orange-400 font-semibold">
                             {track.keyInfo.relativeKey.split(' ')[0]}
                           </span>
                         </span>
                       </td>
 
                       {/* Duration */}
-                      <td className="py-3 px-4 text-right text-slate-400 font-mono">
+                      <td className="py-3 px-4 text-right text-slate-500 dark:text-slate-400 font-mono">
                         {Math.floor(track.duration / 60)}:
                         {Math.floor(track.duration % 60)
                           .toString()
@@ -652,7 +657,7 @@ export function AudioDropZone({
                             <button
                               title="Write ID3 tags to this MP3"
                               onClick={() => handleSingleId3Write(track)}
-                              className="p-1 rounded text-slate-400 hover:text-orange-400 hover:bg-orange-500/10 transition-colors"
+                              className="p-1 rounded text-slate-500 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-400 hover:bg-orange-500/10 transition-colors"
                             >
                               <Tag className="w-3.5 h-3.5" />
                             </button>
@@ -660,7 +665,7 @@ export function AudioDropZone({
                           <button
                             title="Remove track"
                             onClick={() => removeTrack(track.id)}
-                            className="p-1 rounded text-slate-500 hover:text-red-400 hover:bg-red-500/10 transition-colors"
+                            className="p-1 rounded text-slate-400 dark:text-slate-500 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-500/10 transition-colors"
                           >
                             <X className="w-3.5 h-3.5" />
                           </button>
