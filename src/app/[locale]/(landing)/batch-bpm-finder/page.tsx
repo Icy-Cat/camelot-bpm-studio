@@ -41,7 +41,7 @@ export default async function BatchBpmFinderPage({
   const isZh = locale === 'zh';
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-12">
+    <div className="min-h-screen bg-slate-950 text-slate-100 pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-10">
       <SchemaJsonLd
         pageTitle="Batch BPM & Key Finder Online | Multi-Track Audio Analyzer"
         pageDescription="Batch detect BPM tempo and musical key for multiple songs at once. 100% client-side Web Audio API, CSV crate export, zero uploads."

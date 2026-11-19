@@ -235,7 +235,7 @@ export function AudioDropZone({
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
             <Badge variant="outline" className="bg-slate-950/60 border-slate-800 text-slate-300 text-xs">
               ⚡ Instant Key & BPM
             </Badge>
@@ -248,6 +248,13 @@ export function AudioDropZone({
             <Badge variant="outline" className="bg-slate-950/60 border-slate-800 text-slate-300 text-xs">
               📁 Batch Folder Drop
             </Badge>
+          </div>
+
+          <div className="pt-2">
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white font-semibold text-xs shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
+              <UploadCloud className="w-4 h-4" />
+              <span>Browse or Drop Audio Files</span>
+            </span>
           </div>
         </div>
 

@@ -247,14 +247,10 @@ export function SignUser({
           </DropdownMenuContent>
         </DropdownMenu>
       ) : (
-        <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+        <div className="flex items-center shrink-0">
           <Button
-            asChild
-            size={signButtonSize}
-            className={cn(
-              'border-foreground/10 ml-4 cursor-pointer ring-0',
-              isScrolled && 'lg:hidden'
-            )}
+            size="sm"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold text-xs px-3.5 py-1.5 h-8 rounded-lg shadow-sm shadow-orange-500/20 cursor-pointer"
             onClick={() => setIsShowSignModal(true)}
           >
             <span>{t('sign_in_title')}</span>

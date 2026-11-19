@@ -41,7 +41,7 @@ export default async function TempoHalfDoubleFixPage({
   const isZh = locale === 'zh';
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-12">
+    <div className="min-h-screen bg-slate-950 text-slate-100 pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-10">
       <SchemaJsonLd
         pageTitle="Half / Double Tempo BPM Fixer | 70 vs 140 BPM Resolver"
         pageDescription="Resolve 70 vs 140 BPM and 87 vs 174 BPM half-time tempo confusion. 1-click instant x2 and /2 batch multipliers for Rekordbox DJ crates."

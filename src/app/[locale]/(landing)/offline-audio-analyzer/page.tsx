@@ -41,7 +41,7 @@ export default async function OfflineAudioAnalyzerPage({
   const isZh = locale === 'zh';
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 pt-24 pb-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-12">
+    <div className="min-h-screen bg-slate-950 text-slate-100 pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto space-y-10">
       <SchemaJsonLd
         pageTitle="Offline Audio Analyzer | 100% Client-Side Song Key & BPM Finder"
         pageDescription="Analyze audio BPM and musical key completely offline in your browser. Powered by HTML5 Web Audio API with zero cloud uploads."
