@@ -7,6 +7,7 @@ import {
   Disc,
   Download,
   FileAudio,
+  ListMusic,
   Loader2,
   Lock,
   Sparkles,
@@ -22,7 +23,10 @@ import {
   analyzeAudioFile,
   AudioAnalysisResult,
 } from '@/shared/lib/audio/analyzer';
-import { exportTracksToCsv } from '@/shared/lib/audio/csv-exporter';
+import {
+  exportTracksToCsv,
+  exportTracksToM3u8,
+} from '@/shared/lib/audio/csv-exporter';
 import {
   HarmonicTransition,
   sortTracksHarmonically,
@@ -249,6 +253,13 @@ export function AudioDropZone({
     if (tracks.length === 0) return;
     exportTracksToCsv(tracks);
     toast.success('Crate exported to CSV!');
+  };
+
+  // Free Action: Export M3U8 DJ Playlist
+  const handleExportM3u8 = () => {
+    if (tracks.length === 0) return;
+    exportTracksToM3u8(tracks);
+    toast.success('Playlist exported to M3U8 for Rekordbox & Serato!');
   };
 
   // Single-track ID3 writer (free preview for 1 track or per-row download for Pro)
@@ -480,6 +491,17 @@ export function AudioDropZone({
               >
                 <Download className="w-3.5 h-3.5" />
                 Export CSV
+              </Button>
+
+              {/* Free M3U8 DJ Playlist Export */}
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={handleExportM3u8}
+                className="bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-200 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 text-xs gap-1.5"
+              >
+                <ListMusic className="w-3.5 h-3.5" />
+                M3U8
               </Button>
 
               {/* Pro ID3 Tag Writing */}

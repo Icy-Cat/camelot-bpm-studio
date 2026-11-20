@@ -1,6 +1,6 @@
 import { ID3Writer } from 'browser-id3-writer';
 import { AudioAnalysisResult } from './analyzer';
-import { buildTracksCsvContent } from './csv-exporter';
+import { buildTracksCsvContent, buildTracksM3u8Content } from './csv-exporter';
 import { buildZipBlob, ZipEntryInput } from './zip-builder';
 
 /**
@@ -142,11 +142,18 @@ export async function writeBatchId3TagsToZip(
     );
   }
 
-  // Bundle complete crate summary CSV alongside tagged MP3s
+  // Bundle complete crate summary CSV & M3U8 playlist alongside tagged MP3s
+  const dateStamp = new Date().toISOString().slice(0, 10);
   const csvBytes = new TextEncoder().encode(buildTracksCsvContent(tracks));
   entries.push({
-    name: `crate_summary_${new Date().toISOString().slice(0, 10)}.csv`,
+    name: `crate_summary_${dateStamp}.csv`,
     data: csvBytes,
+  });
+
+  const m3uBytes = new TextEncoder().encode(buildTracksM3u8Content(tracks));
+  entries.push({
+    name: `harmonic_playlist_${dateStamp}.m3u8`,
+    data: m3uBytes,
   });
 
   const zipBlob = buildZipBlob(entries);
