@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title">
+  <title id="title">Camelot BPM Studio app icon</title>
+  <rect x="0" y="0" width="256" height="256" rx="56" fill="#0F172A"/>
+  <g id="symbol" transform="translate(36, 34) scale(0.72)">
+    <path fill="#FFFFFF" d="M 214.33 184.0 A 102 102 0 1 1 94.48 35.99 L 108.08 77.84 A 58 58 0 1 0 176.23 162.0 Z"/>
+    <path fill="#F97316" d="M 126.0 18.0 A 115 115 0 0 1 225.59 75.5 L 187.49 97.5 A 71 71 0 0 0 126.0 62.0 Z"/>
+    <path fill="#FFFFFF" d="M 126 107 A 26 26 0 1 1 126 159 A 26 26 0 1 1 126 107 Z"/>
+  </g>
+</svg>

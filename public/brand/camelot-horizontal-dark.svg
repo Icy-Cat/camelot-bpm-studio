@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 256" width="920" height="256" role="img" aria-labelledby="title">
+  <title id="title">Camelot BPM Studio horizontal logo (dark background)</title>
+  <g id="symbol" transform="translate(20, 24) scale(0.8125)">
+    <path fill="#FFFFFF" d="M 212.17 182.75 A 99.5 99.5 0 1 1 100.25 36.89 L 110.21 74.08 A 61 61 0 1 0 178.83 163.5 Z"/>
+    <path fill="#F97316" d="M 126.0 21.5 A 111.5 111.5 0 0 1 222.56 77.25 L 189.22 96.5 A 73 73 0 0 0 126.0 60.0 Z"/>
+    <path fill="#FFFFFF" d="M 126 109.5 A 23.5 23.5 0 1 1 126 156.5 A 23.5 23.5 0 1 1 126 109.5 Z"/>
+  </g>
+  <g id="wordmark">
+    <text x="262" y="138" fill="#FFFFFF" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="84" font-weight="700" letter-spacing="-2.5">Camelot BPM</text>
+    <text x="266" y="194" fill="#94A3B8" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="600" letter-spacing="10">STUDIO</text>
+  </g>
+</svg>
