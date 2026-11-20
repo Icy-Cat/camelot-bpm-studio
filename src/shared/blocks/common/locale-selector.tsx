@@ -50,7 +50,9 @@ export function LocaleSelector({
         variant={type === 'icon' ? 'ghost' : 'outline'}
         size={type === 'icon' ? 'icon' : 'sm'}
         className={
-          type === 'icon' ? 'h-auto w-auto p-0' : 'hover:bg-primary/10'
+          type === 'icon'
+            ? 'h-auto w-auto p-0'
+            : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-white'
         }
         disabled
       >
@@ -79,7 +81,11 @@ export function LocaleSelector({
             <Languages className="size-4" />
           </Button>
         ) : (
-          <Button variant="outline" size="sm" className="hover:bg-primary/10">
+          <Button
+            variant="outline"
+            size="sm"
+            className="border-slate-200 bg-white text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-white"
+          >
             <Globe size={16} />
             {localeNames[currentLocale]}
           </Button>

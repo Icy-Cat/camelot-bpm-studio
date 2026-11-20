@@ -90,6 +90,16 @@ export function getMetadata(
         canonical: canonicalUrl,
       },
 
+      icons: {
+        icon: [
+          { url: '/favicon.svg?v=3', type: 'image/svg+xml' },
+          { url: '/favicon-32x32.png?v=3', sizes: '32x32', type: 'image/png' },
+          { url: '/favicon.ico?v=3', sizes: 'any' },
+        ],
+        shortcut: '/favicon.ico?v=3',
+        apple: [{ url: '/apple-icon.png?v=3', sizes: '180x180' }],
+      },
+
       openGraph: {
         type: 'website',
         locale: locale,

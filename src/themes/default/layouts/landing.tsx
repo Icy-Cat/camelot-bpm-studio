@@ -19,7 +19,7 @@ export default async function LandingLayout({
   const Footer = await getThemeBlock('footer');
 
   return (
-    <div className="min-h-screen w-full bg-slate-950 text-slate-100 flex flex-col overflow-x-hidden">
+    <div className="min-h-screen w-full bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 flex flex-col overflow-x-hidden transition-colors duration-200">
       <Header header={header} />
       <main className="flex-1 w-full">{children}</main>
       <Footer footer={footer} />

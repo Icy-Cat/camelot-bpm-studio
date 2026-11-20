@@ -14,10 +14,10 @@ export function Footer({ footer }: { footer: FooterType }) {
   return (
     <footer
       id={footer.id}
-      className={`py-8 sm:py-8 ${footer.className || ''} overflow-x-hidden`}
+      className={`border-t border-slate-200 dark:border-slate-800/80 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 py-10 sm:py-12 transition-colors duration-200 ${footer.className || ''} overflow-x-hidden`}
       // overflow-x-hidden防止-footer-撑出水平滚动条
     >
-      <div className="container space-y-8 overflow-x-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 space-y-8 overflow-x-hidden">
         <div className="grid min-w-0 gap-12 md:grid-cols-5">
           <div className="min-w-0 space-y-4 break-words md:col-span-2 md:space-y-6">
             {footer.brand ? <BrandLogo brand={footer.brand} /> : null}
@@ -101,7 +101,7 @@ export function Footer({ footer }: { footer: FooterType }) {
                   key={index}
                   href={item.url || ''}
                   target={item.target || ''}
-                  className="text-muted-foreground hover:text-primary bg-background block cursor-pointer rounded-full p-2 duration-150"
+                  className="text-slate-600 hover:text-orange-600 bg-slate-100 hover:bg-slate-200/80 dark:text-slate-400 dark:hover:text-orange-400 dark:bg-slate-900 dark:hover:bg-slate-800 block cursor-pointer rounded-full p-2 duration-150"
                   aria-label={item.title || 'Social media link'}
                 >
                   {item.icon && (
