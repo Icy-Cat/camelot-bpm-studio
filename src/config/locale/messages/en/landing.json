@@ -91,6 +91,21 @@
               "target": "_self"
             },
             {
+              "title": "MP3 ID3 Tag Writer (TKEY/TBPM)",
+              "url": "/mp3-id3-tag-writer",
+              "target": "_self"
+            },
+            {
+              "title": "Harmonic Playlist Sorter",
+              "url": "/harmonic-playlist-sorter",
+              "target": "_self"
+            },
+            {
+              "title": "WAV & FLAC Producer Finder",
+              "url": "/wav-flac-key-bpm-finder",
+              "target": "_self"
+            },
+            {
               "title": "Offline Audio Analyzer",
               "url": "/offline-audio-analyzer",
               "target": "_self"
@@ -106,12 +121,17 @@
           "title": "Guides & Plans",
           "children": [
             {
+              "title": "Mixed In Key Alternative",
+              "url": "/mixed-in-key-alternative",
+              "target": "_self"
+            },
+            {
               "title": "Harmonic Mixing Guide",
               "url": "/camelot-key-finder#harmonic-guide",
               "target": "_self"
             },
             {
-              "title": "Pro DJ License",
+              "title": "Pro DJ License ($14.99)",
               "url": "/pricing",
               "target": "_self"
             },

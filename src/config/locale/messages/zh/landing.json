@@ -91,6 +91,21 @@
               "target": "_self"
             },
             {
+              "title": "MP3 ID3 标签写入器",
+              "url": "/mp3-id3-tag-writer",
+              "target": "_self"
+            },
+            {
+              "title": "DJ 谐音歌单自动排序",
+              "url": "/harmonic-playlist-sorter",
+              "target": "_self"
+            },
+            {
+              "title": "WAV / FLAC 无损采样检测",
+              "url": "/wav-flac-key-bpm-finder",
+              "target": "_self"
+            },
+            {
               "title": "端侧隐私音频分析器",
               "url": "/offline-audio-analyzer",
               "target": "_self"
@@ -106,12 +121,17 @@
           "title": "指南与订阅",
           "children": [
             {
+              "title": "Mixed In Key 免费平替对比",
+              "url": "/mixed-in-key-alternative",
+              "target": "_self"
+            },
+            {
               "title": "谐音混音全流程教程",
               "url": "/camelot-key-finder#harmonic-guide",
               "target": "_self"
             },
             {
-              "title": "Pro DJ 专业版买断",
+              "title": "Pro DJ 专业版买断 ($14.99)",
               "url": "/pricing",
               "target": "_self"
             },
