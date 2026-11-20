@@ -260,7 +260,7 @@ export function SignUser({
         <div className="flex items-center shrink-0">
           <Button
             size="sm"
-            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold text-xs px-3.5 py-1.5 h-8 rounded-lg shadow-sm shadow-orange-500/20 cursor-pointer"
+            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold text-xs px-3.5 py-1.5 h-8 rounded-lg shadow-sm shadow-orange-500/20 cursor-pointer whitespace-nowrap"
             onClick={() => setIsShowSignModal(true)}
           >
             <span>{t('sign_in_title')}</span>
