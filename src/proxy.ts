@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextFetchEvent, NextRequest, NextResponse } from 'next/server';
 import { getSessionCookie } from 'better-auth/cookies';
 import createIntlMiddleware from 'next-intl/middleware';
 
@@ -6,8 +6,43 @@ import { routing } from '@/core/i18n/config';
 
 const intlMiddleware = createIntlMiddleware(routing);
 
-export async function proxy(request: NextRequest) {
+const PVUV_CRAWLERS =
+  /chatgpt-user|oai-searchbot|gptbot|perplexity-user|perplexitybot|claude-user|claude-searchbot|claudebot|bingbot|googlebot|applebot|duckduckbot|duckassistbot|yandexbot|meta-externalagent|bytespider/i;
+const PVUV_ASSET = /\.(?!(?:html?|txt|xml|md)$)[a-z0-9]{1,8}$/i;
+
+export async function proxy(request: NextRequest, event: NextFetchEvent) {
   const { pathname } = request.nextUrl;
+
+  // Report AI & search engine crawler fetches asynchronously to PVUV.ai
+  const ua = request.headers.get('user-agent') ?? '';
+  const pvuvSite = process.env.PVUV_SITE;
+  const pvuvIngestToken = process.env.PVUV_INGEST_TOKEN;
+  if (
+    (request.method === 'GET' || request.method === 'HEAD') &&
+    PVUV_CRAWLERS.test(ua) &&
+    !pathname.startsWith('/api/') &&
+    !pathname.startsWith('/_') &&
+    !PVUV_ASSET.test(pathname) &&
+    pvuvSite &&
+    pvuvIngestToken
+  ) {
+    const ip =
+      request.headers.get('x-real-ip') ??
+      request.headers.get('x-forwarded-for')?.split(',')[0]?.trim();
+    event.waitUntil(
+      fetch(`https://api.pvuv.ai/v1/sites/${pvuvSite}/crawler_hits`, {
+        method: 'POST',
+        headers: {
+          authorization: `Bearer ${pvuvIngestToken}`,
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          hits: [{ ua, path: pathname, ip, ts: Date.now() }],
+        }),
+        signal: AbortSignal.timeout(3000),
+      }).catch(() => {})
+    );
+  }
 
   // Handle internationalization first
   const intlResponse = intlMiddleware(request);

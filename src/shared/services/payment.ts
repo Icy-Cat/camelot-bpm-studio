@@ -9,6 +9,7 @@ import {
   PaymentStatus,
   PaymentType,
 } from '@/extensions/payment/types';
+import { trackPvuvServerEvent } from '@/shared/lib/analytics/pvuv-server';
 import { getSnowId, getUuid } from '@/shared/lib/hash';
 import { Configs, getAllConfigs } from '@/shared/models/config';
 
@@ -252,6 +253,27 @@ export async function handleCheckoutSuccess({
       newSubscription,
       newCredit,
     });
+
+    const paidAmountCents =
+      session.paymentInfo?.paymentAmount ?? order.amount ?? 0;
+    const paidCurrency = (
+      session.paymentInfo?.paymentCurrency ||
+      order.currency ||
+      'USD'
+    ).toUpperCase();
+
+    await trackPvuvServerEvent({
+      name: 'purchase',
+      id: `purchase-${orderNo}`,
+      user_id: order.userId ? String(order.userId) : undefined,
+      revenue: Number((paidAmountCents / 100).toFixed(2)),
+      currency: paidCurrency,
+      props: {
+        provider: order.paymentProvider || 'creem',
+        product_id: order.productId || 'pro-lifetime',
+        payment_type: order.paymentType || 'one_time',
+      },
+    });
   } else if (
     session.paymentStatus === PaymentStatus.FAILED ||
     session.paymentStatus === PaymentStatus.CANCELED
@@ -388,6 +410,27 @@ export async function handlePaymentSuccess({
       updateOrder,
       newSubscription,
       newCredit,
+    });
+
+    const paidAmountCents =
+      session.paymentInfo?.paymentAmount ?? order.amount ?? 0;
+    const paidCurrency = (
+      session.paymentInfo?.paymentCurrency ||
+      order.currency ||
+      'USD'
+    ).toUpperCase();
+
+    await trackPvuvServerEvent({
+      name: 'purchase',
+      id: `purchase-${orderNo}`,
+      user_id: order.userId ? String(order.userId) : undefined,
+      revenue: Number((paidAmountCents / 100).toFixed(2)),
+      currency: paidCurrency,
+      props: {
+        provider: order.paymentProvider || 'creem',
+        product_id: order.productId || 'pro-lifetime',
+        payment_type: order.paymentType || 'one_time',
+      },
     });
   } else {
     throw new Error('unknown payment status');

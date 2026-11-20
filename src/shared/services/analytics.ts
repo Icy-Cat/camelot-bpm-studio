@@ -4,6 +4,7 @@ import {
   GoogleAnalyticsProvider,
   OpenPanelAnalyticsProvider,
   PlausibleAnalyticsProvider,
+  PvuvAnalyticsProvider,
   VercelAnalyticsProvider,
 } from '@/extensions/analytics';
 import { Configs, getAllConfigs } from '@/shared/models/config';
@@ -50,6 +51,21 @@ export function getAnalyticsManagerWithConfigs(configs: Configs) {
   // vercel analytics
   if (configs.vercel_analytics_enabled === 'true') {
     analytics.addProvider(new VercelAnalyticsProvider({ mode: 'auto' }));
+  }
+
+  // pvuv.ai analytics
+  const pvuvSiteId =
+    configs.pvuv_site_id ||
+    process.env.PVUV_SITE ||
+    process.env.NEXT_PUBLIC_PVUV_SITE_ID;
+  if (pvuvSiteId) {
+    analytics.addProvider(
+      new PvuvAnalyticsProvider({
+        siteId: pvuvSiteId,
+        apiUrl: 'https://in.pvuv.ai',
+        exclude: '/admin/*,/*/admin/*',
+      })
+    );
   }
 
   return analytics;

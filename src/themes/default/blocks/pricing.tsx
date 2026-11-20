@@ -25,6 +25,7 @@ import {
 } from '@/shared/components/ui/select';
 import { Tabs, TabsList, TabsTrigger } from '@/shared/components/ui/tabs';
 import { useAppContext } from '@/shared/contexts/app';
+import { trackPvuvEvent } from '@/shared/lib/analytics/pvuv';
 import { getCookie } from '@/shared/lib/cookie';
 import { cn } from '@/shared/lib/utils';
 import { Subscription } from '@/shared/models/subscription';
@@ -310,6 +311,12 @@ export function Pricing({
       if (!checkoutUrl) {
         throw new Error('checkout url not found');
       }
+
+      trackPvuvEvent('checkout_start', {
+        product_id: item.product_id,
+        provider: paymentProvider || configs.default_payment_provider || 'creem',
+        amount: item.amount / 100,
+      });
 
       window.location.href = checkoutUrl;
     } catch (e: any) {

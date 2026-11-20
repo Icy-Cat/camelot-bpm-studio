@@ -19,6 +19,7 @@ import {
 import { toast } from 'sonner';
 
 import { useAppContext } from '@/shared/contexts/app';
+import { trackPvuvEvent } from '@/shared/lib/analytics/pvuv';
 import {
   analyzeAudioFile,
   AudioAnalysisResult,
@@ -101,8 +102,10 @@ export function AudioDropZone({
       if (!isPro) {
         const remainingSlots = Math.max(0, maxFreeTracks - tracks.length);
         if (tracks.length + files.length > maxFreeTracks) {
-          setProModalTrigger(`Batching more than ${maxFreeTracks} tracks`);
+          const trigger = `Batching more than ${maxFreeTracks} tracks`;
+          setProModalTrigger(trigger);
           setProModalOpen(true);
+          trackPvuvEvent('pro_modal_opened', { trigger: 'batch_limit' });
           if (remainingSlots === 0) {
             return;
           }
@@ -142,6 +145,10 @@ export function AudioDropZone({
       setCurrentProgress(100);
       setCurrentFileName('');
       if (successCount > 0) {
+        trackPvuvEvent('audio_analyzed', {
+          tracks_count: successCount,
+          is_pro: isPro,
+        });
         toast.success(
           `Analyzed ${successCount} track${successCount > 1 ? 's' : ''} in browser!`
         );
@@ -252,6 +259,7 @@ export function AudioDropZone({
   const handleExportCsv = () => {
     if (tracks.length === 0) return;
     exportTracksToCsv(tracks);
+    trackPvuvEvent('export_csv', { tracks_count: tracks.length });
     toast.success('Crate exported to CSV!');
   };
 
@@ -259,6 +267,7 @@ export function AudioDropZone({
   const handleExportM3u8 = () => {
     if (tracks.length === 0) return;
     exportTracksToM3u8(tracks);
+    trackPvuvEvent('export_m3u8', { tracks_count: tracks.length });
     toast.success('Playlist exported to M3U8 for Rekordbox & Serato!');
   };
 
@@ -267,6 +276,7 @@ export function AudioDropZone({
     try {
       const { downloadUrl, filename } = await writeId3TagsToAudio(track);
       downloadFile(downloadUrl, filename);
+      trackPvuvEvent('id3_tag_written', { mode: 'single', tagged_count: 1 });
       toast.success(
         `Downloaded ${filename} with embedded Camelot & BPM ID3 tags!`
       );
@@ -290,6 +300,7 @@ export function AudioDropZone({
     if (!isPro) {
       setProModalTrigger('Batch ID3 Tag Writing for Rekordbox & Serato');
       setProModalOpen(true);
+      trackPvuvEvent('pro_modal_opened', { trigger: 'batch_id3' });
       return;
     }
 
@@ -298,6 +309,10 @@ export function AudioDropZone({
       const { downloadUrl, filename, taggedCount, skippedCount } =
         await writeBatchId3TagsToZip(tracks);
       downloadFile(downloadUrl, filename);
+      trackPvuvEvent('id3_tag_written', {
+        mode: 'batch_zip',
+        tagged_count: taggedCount,
+      });
       const skipNote =
         skippedCount > 0
           ? ` (${skippedCount} non-MP3 track${skippedCount > 1 ? 's' : ''} included in bundled CSV)`
@@ -320,6 +335,7 @@ export function AudioDropZone({
     if (!isPro) {
       setProModalTrigger('Harmonic Mix Sequence Auto-Sorter');
       setProModalOpen(true);
+      trackPvuvEvent('pro_modal_opened', { trigger: 'harmonic_sort' });
       return;
     }
 
@@ -339,6 +355,10 @@ export function AudioDropZone({
       totalTransitions > 0
         ? Math.round((smoothCount / totalTransitions) * 100)
         : 100;
+    trackPvuvEvent('harmonic_sort_used', {
+      tracks_count: sortedTracks.length,
+      smooth_pct: smoothPct,
+    });
     toast.success(
       `Harmonically sorted ${sortedTracks.length} tracks (${smoothCount}/${totalTransitions} smooth Camelot transitions · ${smoothPct}%)!`
     );

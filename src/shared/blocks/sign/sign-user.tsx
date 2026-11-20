@@ -21,6 +21,7 @@ import {
   DropdownMenuTrigger,
 } from '@/shared/components/ui/dropdown-menu';
 import { useAppContext } from '@/shared/contexts/app';
+import { identifyPvuvUser } from '@/shared/lib/analytics/pvuv';
 import { cn } from '@/shared/lib/utils';
 import { User as UserType } from '@/shared/models/user';
 import { NavItem, UserNav } from '@/shared/types/blocks/common';
@@ -138,6 +139,15 @@ export function SignUser({
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isPending, sessionUser, user?.id]);
+
+  // Identify signed-in user in PVUV with opaque internal ID (no PII)
+  const pvuvIdentifiedRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (displayUser?.id && pvuvIdentifiedRef.current !== displayUser.id) {
+      pvuvIdentifiedRef.current = displayUser.id;
+      identifyPvuvUser(displayUser.id);
+    }
+  }, [displayUser?.id]);
 
   return (
     <>
